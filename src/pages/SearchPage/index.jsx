@@ -1,4 +1,5 @@
 import { Input, Row } from 'antd';
+import { Helmet } from 'react-helmet-async'
 
 // Components
 import BackButton from '../../components/shared/BackButton';
@@ -7,7 +8,7 @@ import BackButton from '../../components/shared/BackButton';
 import useDebounce from '../../hooks/useDebounce';
 
 // Requests
-import { getListOfCities } from "../../requests/weather";
+import { getListOfCities } from '../../requests/weather';
 
 // Styles
 import styles from './styles.module.scss';
@@ -24,19 +25,24 @@ const SearchPage = () => {
     const debouncedSearchCity = useDebounce(handleSearchCity);
 
     return (
-        <section>
-            <div className="container">
-                <Row className={styles.topNavWrapper}>
-                    <BackButton />
-                    <Input
-                        onInput={debouncedSearchCity}
-                        className={styles.searchCitiesInput}
-                        placeholder="City name"
-                        maxLength="12"
-                    />
-                </Row>
-            </div>
-        </section>
+        <>
+            <Helmet>
+                <title>Search cities</title>
+            </Helmet>
+            <section>
+                <div className="container">
+                    <Row className={styles.topNavWrapper}>
+                        <BackButton />
+                        <Input
+                            onInput={debouncedSearchCity}
+                            className={styles.searchCitiesInput}
+                            placeholder="City name"
+                            maxLength="12"
+                        />
+                    </Row>
+                </div>
+            </section>
+        </>
     );
 };
 
