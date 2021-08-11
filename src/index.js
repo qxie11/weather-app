@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 
 // Styles
+import 'antd/dist/antd.css';
 import './styles/index.scss';
 
 // Components
