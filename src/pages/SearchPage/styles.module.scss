@@ -1,7 +1,5 @@
-.searchCitiesInput {
-  flex-basis: 90%;
-}
-
 .topNavWrapper {
+  display: grid;
+  grid-template-columns: 40px 1fr;
   margin-bottom: 30px;
 }

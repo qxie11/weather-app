@@ -1,8 +1,11 @@
 import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
+// Styles
+import styles from './styles.module.scss';
+
 const Spinner = () =>  (
-    <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
+    <Spin className={styles.spin} indicator={<LoadingOutlined className={styles.outlined} spin />} />
 );
 
 export default Spinner;
