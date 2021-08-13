@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import { useDispatch } from 'react-redux';
 
 // Actions
-import { fetchCitiesList } from "../../store/slices/cities-list";
+import { fetchCitiesList } from "../../store/actions/cities-list-actions";
 
 // Components
 import BackButton from '../../components/shared/BackButton';
