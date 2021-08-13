@@ -17,6 +17,7 @@ export const fetchCitiesList = createAsyncThunk(
         try {
             return parseCityListData((await getListOfCities(city)).data);
         } catch(e) {
+            alert(e.message);
             return e.message;
         }
     }
@@ -33,14 +34,11 @@ const citiesListSlice = createSlice({
             state.citiesListLoading = false;
             if (Array.isArray(action.payload) && action.payload.length > 15) {
                 action.payload.length = 15;
-                state.citiesList = action.payload;
-            } else {
-                state.citiesList = action.payload;
             }
+            state.citiesList = action.payload;
         })
         .addCase(fetchCitiesList.rejected, (state, action) => {
             state.citiesListLoading = false;
-            alert(action.payload);
         })
     },
 })

@@ -21,7 +21,7 @@ const CitiesList = () => {
                         city={city.name}
                         country={city.sys.country}
                     />
-                )) || 'Type something')
+                )))
             }
             {
                 Array.isArray(citiesList) && !citiesList?.length && !isLoading && 'Nothing found'
