@@ -25,3 +25,12 @@ export const getCityWeather = (id) => axiosWeatherDataInstance({
         appid: API_KEY,
     },
 });
+
+export const getCityWeatherForecast = (id) => axiosWeatherDataInstance({
+    method: 'GET',
+    url: 'forecast',
+    params: {
+        id,
+        appid: API_KEY,
+    },
+});
