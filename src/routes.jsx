@@ -1,6 +1,7 @@
-import { Redirect, Route, Switch } from "react-router";
+import { Redirect, Route, Switch, useParams } from "react-router";
 import { lazy, Suspense } from "react";
 import Spinner from "./components/shared/Spinner";
+import IntegerParamGuard from "./guards/IntegerParamGuard";
 const SearchPage = lazy(() => import('./pages/SearchPage'));
 const CityIdPage = lazy(() => import('./pages/CityIdPage'));
 
@@ -10,7 +11,9 @@ const Routes = () => (
              <SearchPage />
        </Suspense>} />
        <Route exact path="/:cityId" render={() => <Suspense fallback={<Spinner />}>
-           <CityIdPage />
+           <IntegerParamGuard paramName="cityId">
+               <CityIdPage />
+           </IntegerParamGuard>
        </Suspense>} />
        <Route exact path="/:cityId/detail" render={() => <div>details</div>} />
        <Route exact path="/favorites" render={() => <div>favorites</div>} />
