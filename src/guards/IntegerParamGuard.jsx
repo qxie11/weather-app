@@ -1,9 +1,9 @@
-import { Redirect, useParams } from "react-router";
+import { Redirect, useParams } from 'react-router';
 
 const IntegerParamGuard = ({ children, paramName }) => {
     const param = useParams()[paramName];
 
-    if (!Number.isInteger(+param)) {
+    if (!(/^\d{7}$/).test(param)) {
         return <Redirect to="/search" />;
     }
 

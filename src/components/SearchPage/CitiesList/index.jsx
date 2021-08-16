@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { isEmpty } from 'lodash';
 import { Typography } from 'antd';
-import { selectCitiesList, selectIsCitiesListLoading } from "../../../store/selectors/cities-list-selectors";
+import { selectCitiesList, selectIsCitiesListLoading } from '../../../store/selectors/cities-list-selectors';
 
 // Components
 import CityItem from '../CityItem';
