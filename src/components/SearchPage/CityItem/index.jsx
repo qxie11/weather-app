@@ -1,5 +1,5 @@
 import { Card } from 'antd';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const CityItem = ({
     id,
